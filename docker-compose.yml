@@ -3,7 +3,7 @@ version: "2"
 services:
   
   snapserver:
-    image: kevineye/snapcast
+    image: snapcast
     build: .
     volumes:
       - spotify-share:/data/spotify
@@ -13,11 +13,11 @@ services:
     command: snapserver -s pipe:///data/spotify/fifo?name=Spotify&sampleformat=44100:16:2
     
   spotify:
-    image: kevineye/librespot
+    image: librespot
     volumes:
       - spotify-share:/data
     environment:
-      SPOTIFY_NAME: Snapserver
+      SPOTIFY_NAME: Blackview
       SPOTIFY_USER:     # set here or in .env file
       SPOTIFY_PASSWORD: # set here or in .env file
 
